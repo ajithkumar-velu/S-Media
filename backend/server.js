@@ -8,10 +8,12 @@ import { v2 as cloudinary } from 'cloudinary'
 import postRoute from './router/postRoute.js'
 import notificationRoute from './router/notificationRoute.js'
 import cors from 'cors'
+import path from 'path'
 dotenv.config()
 
-const PORT = process.env.PORT 
+const PORT = process.env.PORT || 4000
 const app = express()
+const __dirname = path.resolve()
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_NAME,
     api_key: process.env.CLOUDINARY_API_KEY,
@@ -30,6 +32,14 @@ app.use('/api/auth', authRouter)
 app.use('/api/user', userRouter)
 app.use('/api/posts', postRoute)
 app.use('/api/notifications', notificationRoute)
+
+if (process.env.NODE_ENV === "production") {
+	app.use(express.static(path.join(__dirname, "/frontend/dist")));
+
+	app.get("*", (req, res) => {
+		res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+	});
+}
 
 app.listen(PORT, ()=>{
     console.log(`Server running on PORT: ${PORT}`);    
