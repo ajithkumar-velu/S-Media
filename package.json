@@ -27,10 +27,7 @@
     "react-modal": "^3.16.3",
     "react-modal-pro": "^1.2.8",
     "react-pure-modal": "^2.2.7",
-    "twitter": "file:",
-    "react": "^18.0.0",
-  "react-dom": "^18.0.0",
-  "vite": "^latest"
+    "twitter": "file:"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"
