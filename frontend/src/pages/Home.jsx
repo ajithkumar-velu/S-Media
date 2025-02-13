@@ -21,7 +21,7 @@ const Home = () => {
         <LeftNav />
         <div className="flex flex-col max-w-xl w-full items-center gap-1.5 overflow-hidden h-full" >
           {activeNav == 'home' && <CreatePOst />}
-          {activeNav == 'profile' && <div className="overflow-y-auto">
+          {activeNav == 'profile' && <div className="overflow-y-auto w-full">
             <Profile />
             <ProfilePosts />
           </div>}
