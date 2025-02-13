@@ -50,7 +50,7 @@ const CreatePOst = () => {
                 <div className="flex gap-2 items-center w-full" >
 
                     <img src={authUser.profileImg || "avatar-placeholder.png"} className="w-11 rounded-full h-11" alt="" />
-                    <input value={text} onChange={(e) => setText(e.target.value)} type="text" placeholder="Start a post" className="flex-1 input input-bordered w-full  rounded-full" />
+                    <input value={text} onChange={(e) => setText(e.target.value)} type="text" placeholder="Create a post" className="flex-1 input input-bordered w-full  rounded-full" />
                     {/* post image */}
                     <label className="btn btn-circle btn-ghost bg-zinc-800" >
                         <input onChange={handleImageChange} type="file" className="hidden" accept="image/*" />
