@@ -70,7 +70,7 @@ const Profile = () => {
                         <p className='loading'></p>
                     </div> :
                     // cover image
-                    <img src={profileInfo.coverImg || "../../public/cover.png"} className='h-48 w-full object-cover' alt="" />
+                    <img src={profileInfo.coverImg || "cover.png"} className='h-48 w-full object-cover' alt="" />
 
                 }
                 {authUser._id === profileInfo._id &&
