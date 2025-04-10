@@ -27,7 +27,9 @@ app.use(cors({
     origin: ['http://localhost:3000'],
     credentials: true
 }))
-
+app.get("", (req, res)=>{
+	res.send("This is working")
+})
 app.use('/api/auth', authRouter)
 app.use('/api/user', userRouter)
 app.use('/api/posts', postRoute)
